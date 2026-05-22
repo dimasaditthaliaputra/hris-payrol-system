@@ -4,10 +4,11 @@ You are an Expert Laravel 11 Developer and System Architect. Your task is to bui
 # Tech Stack & Guidelines
 - Framework: Laravel 11 
 - Database: MySQL 
-- Frontend: Bootstrap 5 / AdminLTE 
+- Frontend: Bootstrap 5 / AdminLTE / jQuery / DataTables
 - Authentication: Laravel Breeze / Jetstream 
 - Excel Package: PHPSpreadsheet (for Import/Export) 
 - PDF Package: DomPDF / Snappy PDF (for Slip Gaji) 
+- DataTables Package: yajra/laravel-datatables-oracle (for Server-Side Processing)
 - Use strict typing, modern PHP 8+ features, and follow Laravel best practices.
 - Always use FormRequests for validation.
 - Implement soft deletes for master data.
@@ -42,3 +43,5 @@ Implement authorization for:
 2. If I ask you to build a migration, only build the migration. 
 3. Prioritize clean code, solid architectural patterns (Repository-Service), and relationships (Eloquent ORM) before building the UI.
 4. When writing UI (Blade), use the specified Admin template components cleanly.
+5. **UI Interactions**: ALL CRUD operations (Create, Update, Delete) and form submissions MUST utilize jQuery AJAX to prevent full page reloads. Return proper JSON responses from Controllers.
+6. **Data Listings**: MUST use DataTables with Server-Side rendering (Yajra) for all master and transaction data tables to handle large datasets efficiently.
