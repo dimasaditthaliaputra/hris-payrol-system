@@ -78,13 +78,13 @@
 
 | # | Task | Status | Catatan |
 |---|------|--------|---------|
-| 4.1 | Migration: `attendances` | ⬜ Todo | tanggal, hadir, sakit, izin, alpha |
-| 4.2 | Migration: `overtime` | ⬜ Todo | jam lembur per karyawan |
-| 4.3 | Model, Repository, Interface untuk absensi & lembur | ⬜ Todo | |
-| 4.4 | `AttendanceService` implementasi penuh | ⬜ Todo | |
-| 4.5 | Import Absensi dari Excel + validasi | ⬜ Todo | PHPSpreadsheet, catat ke `import_logs` |
-| 4.6 | View rekap absensi bulanan | ⬜ Todo | |
-| 4.7 | Locking absensi jika periode payroll sudah terkunci | ⬜ Todo | **Critical logic** |
+| 4.1 | Migration: `attendances` | ✅ Done | tanggal, hadir, sakit, izin, alpha |
+| 4.2 | Migration: `overtime` | ✅ Done | jam lembur per karyawan |
+| 4.3 | Model, Repository, Interface untuk absensi & lembur | ✅ Done | |
+| 4.4 | `AttendanceService` implementasi penuh | ✅ Done | |
+| 4.5 | Import Absensi dari Excel + validasi | ✅ Done | PHPSpreadsheet, catat ke `import_logs` |
+| 4.6 | View rekap absensi bulanan | ✅ Done | |
+| 4.7 | Locking absensi jika periode payroll sudah terkunci | ✅ Done | **Critical logic** |
 
 ---
 
@@ -92,11 +92,11 @@
 
 | # | Task | Status | Catatan |
 |---|------|--------|---------|
-| 5.1 | Migration: `incentives` | ⬜ Todo | |
-| 5.2 | Migration: `thr_payrolls` | ⬜ Todo | |
-| 5.3 | CRUD Insentif (per karyawan, per periode) | ⬜ Todo | |
-| 5.4 | Kalkulasi & generate THR | ⬜ Todo | |
-| 5.5 | Locking insentif jika payroll terkunci | ⬜ Todo | **Critical logic** |
+| 5.1 | Migration: `incentives` | ✅ Done | |
+| 5.2 | Migration: `thr_payrolls` | ✅ Done | |
+| 5.3 | CRUD Insentif (per karyawan, per periode) | ✅ Done | |
+| 5.4 | Kalkulasi & generate THR | ✅ Done | |
+| 5.5 | Locking insentif jika payroll terkunci | ✅ Done | **Critical logic** |
 
 ---
 
@@ -104,12 +104,12 @@
 
 | # | Task | Status | Catatan |
 |---|------|--------|---------|
-| 6.1 | Migration: `cash_advances` | ⬜ Todo | |
-| 6.2 | Migration: `cash_advance_installments` | ⬜ Todo | Jadwal cicilan |
-| 6.3 | Model, Repository, Interface | ⬜ Todo | |
-| 6.4 | `CashAdvanceService` implementasi penuh | ⬜ Todo | Auto-generate jadwal cicilan |
-| 6.5 | CRUD Cash Advance + approval flow | ⬜ Todo | |
-| 6.6 | Integrasi cicilan ke kalkulasi payroll | ⬜ Todo | **Critical logic** |
+| 6.1 | Migration: `cash_advances` | ✅ Done | |
+| 6.2 | Migration: `cash_advance_installments` | ✅ Done | Jadwal cicilan |
+| 6.3 | Model, Repository, Interface | ✅ Done | |
+| 6.4 | `CashAdvanceService` implementasi penuh | ✅ Done | Auto-generate jadwal cicilan |
+| 6.5 | CRUD Cash Advance + approval flow | ✅ Done | |
+| 6.6 | Integrasi cicilan ke kalkulasi payroll | ⬜ Todo | **Critical logic** (Di Fase 7) |
 
 ---
 

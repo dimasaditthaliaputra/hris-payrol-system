@@ -21,6 +21,7 @@
                             <th>Departemen</th>
                             <th>Kode Posisi</th>
                             <th>Nama Posisi</th>
+                            <th>Tarif Lembur</th>
                             <th>Deskripsi</th>
                             <th width="15%">Aksi</th>
                         </tr>
@@ -66,6 +67,12 @@
                         </div>
 
                         <div class="mb-3">
+                            <label for="overtime_rate" class="form-label">Tarif Lembur per Jam (Rp)</label>
+                            <input type="number" class="form-control" id="overtime_rate" name="overtime_rate" min="0" value="0" required>
+                            <div class="invalid-feedback" id="error-overtime_rate"></div>
+                        </div>
+
+                        <div class="mb-3">
                             <label for="description" class="form-label">Deskripsi</label>
                             <textarea class="form-control" id="description" name="description" rows="3"></textarea>
                             <div class="invalid-feedback" id="error-description"></div>
@@ -107,6 +114,11 @@
                         name: 'name'
                     },
                     {
+                        data: 'overtime_rate',
+                        name: 'overtime_rate',
+                        render: $.fn.dataTable.render.number(',', '.', 0, 'Rp ')
+                    },
+                    {
                         data: 'description',
                         name: 'description'
                     },
@@ -136,6 +148,7 @@
                 $('#department_id').val($(this).data('department_id')).trigger('change');
                 $('#code').val($(this).data('code'));
                 $('#name').val($(this).data('name'));
+                $('#overtime_rate').val($(this).data('overtime_rate'));
                 $('#description').val($(this).data('description'));
 
                 $('#modalTitle').text('Edit Posisi');
@@ -156,6 +169,7 @@
                     department_id: $('#department_id').val(),
                     code: $('#code').val(),
                     name: $('#name').val(),
+                    overtime_rate: $('#overtime_rate').val(),
                     description: $('#description').val(),
                     _method: method
                 };

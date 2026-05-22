@@ -139,6 +139,95 @@
                                 </li>
                             </ul>
                         </li>
+                        
+                        @php
+                            $isTransaksiActive = request()->routeIs('attendances.*', 'overtimes.*', 'incentives.*', 'thr_payrolls.*', 'cash_advances.*');
+                            $isPayrollActive = request()->routeIs('payrolls.*');
+                        @endphp
+                        <li class="nav-header">TRANSAKSI</li>
+                        <li class="nav-item {{ $isTransaksiActive ? 'menu-open' : '' }}">
+                            <a href="#" class="nav-link {{ $isTransaksiActive ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-exchange-alt"></i>
+                                <p>
+                                    Transaksi & Kehadiran
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('attendances.index') }}" class="nav-link {{ request()->routeIs('attendances.index', 'attendances.create', 'attendances.edit') ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Absensi</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('overtimes.index') }}" class="nav-link {{ request()->routeIs('overtimes.*') ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Lembur</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('attendances.report') }}" class="nav-link {{ request()->routeIs('attendances.report') ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Rekap Bulanan</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('incentives.index') }}" class="nav-link {{ request()->routeIs('incentives.*') ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Insentif</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('thr_payrolls.index') }}" class="nav-link {{ request()->routeIs('thr_payrolls.*') ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>THR</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('cash_advances.index') }}" class="nav-link {{ request()->routeIs('cash_advances.*') ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Kasbon (Advance)</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        {{-- PAYROLL SECTION --}}
+                        <li class="nav-header">PAYROLL</li>
+                        <li class="nav-item {{ $isPayrollActive ? 'menu-open' : '' }}">
+                            <a href="#" class="nav-link {{ $isPayrollActive ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-money-check-alt"></i>
+                                <p>
+                                    Penggajian
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('payrolls.index') }}" class="nav-link {{ request()->routeIs('payrolls.*') ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Manajemen Payroll</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('reports.payroll') }}" class="nav-link {{ request()->routeIs('reports.*') ? 'active' : '' }}">
+                                        <i class="far fa-circle nav-icon text-success"></i>
+                                        <p>Laporan / Excel</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    @endif
+
+                    @if(auth()->user()->isKaryawan())
+                        <li class="nav-header">SELF SERVICE</li>
+                        <li class="nav-item">
+                            <a href="{{ route('karyawan.payrolls.index') }}" class="nav-link {{ request()->routeIs('karyawan.payrolls.*') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-file-invoice-dollar"></i>
+                                <p>Slip Gaji Saya</p>
+                            </a>
+                        </li>
                     @endif
                 </ul>
             </nav>

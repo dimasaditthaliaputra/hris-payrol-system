@@ -67,6 +67,14 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
+    /**
+     * User berelasi dengan satu Employee (untuk Karyawan yang punya akun).
+     */
+    public function employee(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Employee::class);
+    }
+
     // =========================================================
     // Helper Methods (Authorization Shortcuts)
     // =========================================================

@@ -18,4 +18,5 @@ interface RepositoryInterface
     public function update(int $id, array $data): bool;
     public function delete(int $id): bool;
     public function paginate(int $perPage = 15): \Illuminate\Pagination\LengthAwarePaginator;
+    public function model(): \Illuminate\Database\Eloquent\Model;
 }

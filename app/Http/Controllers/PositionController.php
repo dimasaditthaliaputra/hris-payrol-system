@@ -36,7 +36,7 @@ class PositionController extends Controller
                 return $row->department ? $row->department->name : '-';
             })
             ->addColumn('action', function ($row) {
-                $btn = '<button type="button" class="btn btn-sm btn-warning edit-btn" data-id="' . $row->id . '" data-department_id="' . $row->department_id . '" data-code="' . $row->code . '" data-name="' . $row->name . '" data-description="' . $row->description . '"><i class="fas fa-edit"></i> Edit</button>';
+                $btn = '<button type="button" class="btn btn-sm btn-warning edit-btn" data-id="' . $row->id . '" data-department_id="' . $row->department_id . '" data-code="' . $row->code . '" data-name="' . $row->name . '" data-description="' . $row->description . '" data-overtime_rate="' . $row->overtime_rate . '"><i class="fas fa-edit"></i> Edit</button>';
                 $btn .= ' <button type="button" class="btn btn-sm btn-danger delete-btn" data-id="' . $row->id . '"><i class="fas fa-trash"></i> Hapus</button>';
                 return $btn;
             })

@@ -13,6 +13,7 @@ class Position extends Model
         'code',
         'name',
         'description',
+        'overtime_rate',
     ];
 
     public function department()

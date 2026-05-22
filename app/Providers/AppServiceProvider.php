@@ -2,10 +2,20 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use App\Models\PayrollDetail;
+use App\Policies\PayrollDetailPolicy;
+use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Gate;
 
 class AppServiceProvider extends ServiceProvider
 {
+    /**
+     * Policy mappings.
+     */
+    protected $policies = [
+        PayrollDetail::class => PayrollDetailPolicy::class,
+    ];
+
     /**
      * Register any application services.
      */
@@ -19,6 +29,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $this->registerPolicies();
     }
 }

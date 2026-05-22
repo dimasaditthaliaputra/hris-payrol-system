@@ -21,6 +21,7 @@ class UpdatePositionRequest extends FormRequest
             'code' => ['required', 'string', 'max:255', \Illuminate\Validation\Rule::unique('positions')->ignore($this->position)],
             'name' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
+            'overtime_rate' => ['required', 'numeric', 'min:0'],
         ];
     }
 
@@ -37,6 +38,9 @@ class UpdatePositionRequest extends FormRequest
             'name.string' => 'Nama posisi harus berupa teks.',
             'name.max' => 'Nama posisi tidak boleh lebih dari 255 karakter.',
             'description.string' => 'Deskripsi harus berupa teks.',
+            'overtime_rate.required' => 'Tarif lembur wajib diisi.',
+            'overtime_rate.numeric' => 'Tarif lembur harus berupa angka.',
+            'overtime_rate.min' => 'Tarif lembur tidak boleh kurang dari 0.',
         ];
     }
 }
